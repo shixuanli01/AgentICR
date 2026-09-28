@@ -1,0 +1,12 @@
+# Versions used for the reported runs (Python 3.12.3, CUDA 12.8).
+# Install PyTorch first from the index that matches your CUDA driver, e.g.
+#   pip install torch==2.7.1 --index-url https://download.pytorch.org/whl/cu128
+torch==2.7.1
+transformers==4.51.3
+tokenizers==0.21.4
+accelerate==1.7.0
+safetensors==0.8.0
+datasets==3.6.0
+numpy==2.2.6
+tqdm
+pytest
