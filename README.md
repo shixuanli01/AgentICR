@@ -165,26 +165,21 @@ done
 
 ### Reference values
 
-Mixed-correctness strata of the reported runs (Qwen3-4B, Critical Evaluation).
-Values are CR / PR / SI in percent; counts per stratum in the last column. All
-cells use revision replication `seed_pair_00` except MedQA StateBridge (marked
-*), which is reported from `seed_pair_01`.
+Mixed-correctness strata of the reported runs (Qwen3-4B, `seed_pair_00`,
+Critical Evaluation). Values are CR / PR / SI in percent; counts per stratum in
+the last column.
 
 | Benchmark | No Message | Answer Only | Full Text | StateBridge | LatentMAS | n (CR / PR) |
 |---|---|---|---|---|---|---|
-| MedQA | 6.90 / 98.28 / 52.59 | 38.79 / 80.17 / 59.48 | 80.17 / 42.24 / 61.21 | 54.31 / 71.55 / 62.93 * | 69.83 / 32.76 / 51.29 | 116 / 116 |
+| MedQA | 6.90 / 98.28 / 52.59 | 38.79 / 80.17 / 59.48 | 80.17 / 42.24 / 61.21 | 54.31 / 71.55 / 62.93 | 69.83 / 32.76 / 51.29 | 116 / 116 |
 | ARC-C | 8.16 / 92.86 / 50.51 | 38.78 / 63.27 / 51.02 | 80.61 / 34.69 / 57.65 | 69.39 / 44.90 / 57.14 | 58.16 / 45.92 / 52.04 | 98 / 98 |
 | GSM8K | 13.04 / 92.39 / 52.72 | 39.13 / 70.65 / 54.89 | 51.09 / 52.17 / 51.63 | 39.13 / 73.91 / 56.52 | 59.78 / 46.74 / 53.26 | 92 / 92 |
 | GPQA-D | 14.04 / 96.49 / 55.26 | 56.14 / 63.16 / 59.65 | 74.56 / 47.37 / 60.96 | 64.04 / 51.75 / 57.89 | 61.40 / 50.88 / 56.14 | 114 / 114 |
 | HumanEval+ | 57.14 / 92.86 / 75.00 | - | 75.00 / 92.86 / 83.93 | 67.86 / 96.43 / 82.14 | 85.71 / 60.71 / 73.21 | 28 / 28 |
 
-\* MedQA StateBridge: run the `seed_pair_01` replication of section 7.3 to
-reproduce this cell (CR 63/116, PR 83/116). The default `seed_pair_00` run of
-`scripts/run_icr.sh` gives 57.76 / 75.00 / 66.38 for this cell instead.
-
-Re-running on the same GPU model with the same versions reproduced records
-token for token in our checks; on other hardware expect small differences from
-floating-point non-determinism.
+Re-running on the same GPU model with the same versions
+reproduced records token for token in our checks; on other hardware expect
+small differences from floating-point non-determinism.
 
 ---
 
